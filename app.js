@@ -9,8 +9,8 @@ const motivationalMessages = [
   "If you are working on something that you really care about, you don't have to be pushed, the vision pulls you.",
   "People who are crazy enough to think they can change the world are the ones who do.",
   "Failure will never overtake me if my determination to succeed is strong enough.",
-  "We may encounter many defeats but we must not be defeated",
-  "We generate fears while we sit. We overcome them by action",
+  "We may encounter many defeats but we must not be defeated.",
+  "We generate fears while we sit. We overcome them by action.",
   "Whether you think you can or you think you can't, you are right.",
   "Security is mostly a superstition. Life is either a daring adventure or nothing.",
   "The man who has confidence in himself gains the confidence of others.",
@@ -20,10 +20,31 @@ const motivationalMessages = [
   "To see what is right and not do it is a lack of courage.",
   "Reading is to the mind, as exercise is to the body.",
   "Things work out best for those who make the best of how things work out.",
-  "Today's accomplishments are yesterday's impossibilities",
+  "Today's accomplishments are yesterday's impossibilities.",
   "The only way to do great work is to love what you do. If you have not found it, yet, keep looking. Don't settle.",
 ];
 
-const generateRandomNumber = Math.floor(Math.random() * motivationalMessages.length);
+const emoji = ["😀", "😇", "🥰", "😱", "😈", "🤑"];
 
-console.log(motivationalMessages[generateRandomNumber]);
+const dayList = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday ",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const today = dayList[new Date().getDay()];
+
+const generateRandomNumber = (array) => {
+  return Math.floor(Math.random() * array.length);
+};
+
+const formatted = `Today is ${today}! \n\nThe emoji of the day is:\n\n${
+  emoji[generateRandomNumber(emoji)]
+}\n\nYour motivation for today is:\n${
+  motivationalMessages[generateRandomNumber(motivationalMessages)]
+}`;
+
+console.log(formatted);
